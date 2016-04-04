@@ -1,13 +1,13 @@
 do
 
 function run(msg, matches)
-    return "Self-Bot v2 \n by BeatBot Team :) <3 \n @BeatBot_Team"
+    return "#THIS_IS_AMIR i created self bot with Beatbot source\n @Tis_Is_Amir"
 end 
 return {
   patterns = {
-    "^#version$",
-    "^#bot$",
-    "^#selfbot$"
+    "^#OffLiNeTeam$",
+    "^#amir$",
+    "^#Amir$"
   },
   run = run
 }

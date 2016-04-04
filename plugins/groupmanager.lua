@@ -59,7 +59,7 @@ local function kick_by_username(cb_extra, success, result)
 end
 
 local function run(msg, matches)
-       if matches[1] == 'setname' then
+       if matches[1] == 'setnam' then
         if permissions(msg.from.id, msg.to.id, "settings") then
             local hash = 'name:enabled:'..msg.to.id
             if not redis:get(hash) then
@@ -71,7 +71,7 @@ local function run(msg, matches)
             end
             return
         end
-    elseif matches[1] == 'newlink' then
+    elseif matches[1] == 'nlink' then
         if permissions(msg.from.id, msg.to.id, "setlink") then
         	local receiver = get_receiver(msg)
             local hash = 'link:'..msg.to.id
@@ -149,7 +149,7 @@ local function run(msg, matches)
                 end
             end
         end
-            elseif matches[1] == 'add' then
+            elseif matches[1] == 'ad' then
         if permissions(msg.from.id, msg.to.id, "add") then
             local chat_id = msg.to.id
             local chat_type = msg.to.type
@@ -184,15 +184,15 @@ end
 end
 return {
     patterns = {
-        '^#(setname) (.*)$',
+        '^#(setnam) (.*)$',
         '^#(link)$',
-        '^#(newlink)$',
+        '^#(nlink)$',
         '^#(tosuper)$',
         '^#(setdes) (.*)$',
         "^#(rmv)$",
         "^#(rmv) (.*)$",
-        "^#(add)$",
-        "^#(add) (.*)$",
+        "^#(ad)$",
+        "^#(ad) (.*)$",
     },
     run = run
 }

@@ -229,7 +229,7 @@ function create_config( )
   config = {
     enabled_plugins = {
      "ctrl",
-     "plugins,
+     "plugins",
      "version",
      "addplug",
      "help",
